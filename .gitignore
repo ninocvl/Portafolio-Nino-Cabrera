@@ -1,0 +1,12 @@
+# Claude Code AI assistant files
+.claude/
+
+# Impeccable design skill artifacts
+.impeccable/
+.github/skills/
+
+# Local design context (not needed on GitHub)
+PRODUCT.md
+DESIGN.md
+
+.agents/skills/
