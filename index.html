@@ -9,79 +9,103 @@
   <meta property="og:type" content="website" />
   <title>Nino Cabrera</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@600;700&family=Fragment+Mono&display=optional" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Barlow+Condensed:wght@600;700&family=Fragment+Mono&display=optional" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     ul { list-style: none; }
     a  { color: inherit; text-decoration: none; }
 
+    /* ── Tokens ── */
     :root {
-      --bg:          oklch(0.09 0 0);
-      --bg-card:     oklch(0.12 0 0);
-      --bg-card-hover: oklch(0.13 0 0);
-      --bg-metric:   oklch(0.14 0 0);
-      --border:      oklch(0.19 0 0);
-      --border-hover:oklch(0.32 0 0);
-      --fg:          oklch(0.93 0 0);
-      --fg-muted:    oklch(0.60 0 0);
-      --fg-subtle:   oklch(0.36 0 0);
-      --accent:      oklch(0.73 0.155 192);
-      --accent-dim:  oklch(0.73 0.155 192 / 0.10);
-      --grid-line:   oklch(0.73 0.155 192 / 0.055);
-      --sans:        'Barlow', system-ui, sans-serif;
-      --display:     'Barlow Condensed', 'Barlow', system-ui, sans-serif;
-      --mono:        'Fragment Mono', ui-monospace, 'SF Mono', monospace;
-      --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
-      color-scheme:  dark;
+      /* surfaces */
+      --bg:            oklch(0.97 0.006 70);
+      --bg-card:       #ffffff;
+      --bg-card-hover: oklch(0.985 0.008 70);
+      --border:        oklch(0.91 0.004 70);
+      --border-hover:  oklch(0.80 0.006 70);
+
+      /* text */
+      --fg:            oklch(0.13 0.010 70);
+      --fg-muted:      oklch(0.46 0.008 70);
+      --fg-subtle:     oklch(0.65 0.005 70);
+
+      /* global accent (coral-warm) */
+      --accent:        oklch(0.62 0.145 25);
+      --accent-dim:    oklch(0.62 0.145 25 / 0.10);
+      --accent-glow:   oklch(0.62 0.145 25 / 0.18);
+
+      /* project pastels */
+      --p1:            oklch(0.67 0.13 14);   /* rose-coral  — heart */
+      --p1-dim:        oklch(0.67 0.13 14 / 0.10);
+      --p1-bg:         oklch(0.96 0.04 14);
+
+      --p2:            oklch(0.60 0.11 155);  /* sage green  — telco */
+      --p2-dim:        oklch(0.60 0.11 155 / 0.10);
+      --p2-bg:         oklch(0.96 0.04 155);
+
+      --p3:            oklch(0.60 0.10 245);  /* periwinkle  — bitcoin */
+      --p3-dim:        oklch(0.60 0.10 245 / 0.10);
+      --p3-bg:         oklch(0.96 0.04 245);
+
+      --p4:            oklch(0.62 0.11 300);  /* lavender    — dropout */
+      --p4-dim:        oklch(0.62 0.11 300 / 0.10);
+      --p4-bg:         oklch(0.96 0.04 300);
+
+      /* type */
+      --sans:    'Barlow', system-ui, sans-serif;
+      --display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+      --mono:    'Fragment Mono', ui-monospace, 'SF Mono', monospace;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      color-scheme: light;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       :root {
-        --bg:          oklch(0.98 0 0);
-        --bg-card:     oklch(0.95 0 0);
-        --bg-card-hover: oklch(0.92 0 0);
-        --bg-metric:   oklch(0.91 0 0);
-        --border:      oklch(0.89 0 0);
-        --border-hover:oklch(0.74 0 0);
-        --fg:          oklch(0.13 0 0);
-        --fg-muted:    oklch(0.44 0 0);
-        --fg-subtle:   oklch(0.55 0 0);
-        --accent:      oklch(0.46 0.155 192);
-        --accent-dim:  oklch(0.46 0.155 192 / 0.09);
-        --grid-line:   oklch(0.46 0.155 192 / 0.07);
-        color-scheme:  light;
+        --bg:            oklch(0.11 0.010 255);
+        --bg-card:       oklch(0.14 0.010 255);
+        --bg-card-hover: oklch(0.17 0.010 255);
+        --border:        oklch(0.21 0.010 255);
+        --border-hover:  oklch(0.34 0.008 255);
+        --fg:            oklch(0.93 0 0);
+        --fg-muted:      oklch(0.60 0 0);
+        --fg-subtle:     oklch(0.40 0 0);
+        --accent:        oklch(0.74 0.130 25);
+        --accent-dim:    oklch(0.74 0.130 25 / 0.12);
+        --accent-glow:   oklch(0.74 0.130 25 / 0.20);
+        --p1:            oklch(0.76 0.110 14);
+        --p1-dim:        oklch(0.76 0.110 14 / 0.12);
+        --p1-bg:         oklch(0.76 0.110 14 / 0.08);
+        --p2:            oklch(0.72 0.090 155);
+        --p2-dim:        oklch(0.72 0.090 155 / 0.12);
+        --p2-bg:         oklch(0.72 0.090 155 / 0.08);
+        --p3:            oklch(0.72 0.085 245);
+        --p3-dim:        oklch(0.72 0.085 245 / 0.12);
+        --p3-bg:         oklch(0.72 0.085 245 / 0.08);
+        --p4:            oklch(0.74 0.090 300);
+        --p4-dim:        oklch(0.74 0.090 300 / 0.12);
+        --p4-bg:         oklch(0.74 0.090 300 / 0.08);
+        color-scheme: dark;
       }
     }
 
     /* ── Skip link ── */
     .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 16px;
+      position: absolute; top: -100%; left: 16px;
       padding: 8px 16px;
-      background: var(--accent);
-      color: var(--bg);
-      font-family: var(--mono);
-      font-size: 12px;
-      border-radius: 4px;
-      z-index: 100;
+      background: var(--accent); color: var(--bg);
+      font-family: var(--mono); font-size: 12px;
+      border-radius: 4px; z-index: 100;
       transition: top 150ms ease;
     }
     .skip-link:focus { top: 8px; }
 
-    /* ── Screen-reader only ── */
     .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
     html {
@@ -91,7 +115,6 @@
       background: var(--bg);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       scroll-behavior: smooth;
     }
 
@@ -103,198 +126,176 @@
 
     /* ── Nav ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 20;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 20;
       border-bottom: 1px solid var(--border);
-      background: color-mix(in oklch, var(--bg) 82%, transparent);
+      background: color-mix(in oklch, var(--bg) 85%, transparent);
       backdrop-filter: blur(14px);
     }
 
     .nav-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 32px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: 780px; margin: 0 auto; padding: 0 32px;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
     }
 
     .nav-name {
-      font-family: var(--display);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
+      font-family: var(--display); font-size: 15px;
+      font-weight: 600; letter-spacing: 0.01em;
     }
 
     .nav-links { display: flex; gap: 32px; }
 
     .nav-links a {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--fg-muted);
-      position: relative;
-      transition: color 140ms ease;
+      font-size: 13px; color: var(--fg-muted);
+      position: relative; transition: color 140ms ease;
       white-space: nowrap;
     }
 
     .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0; right: 100%;
-      height: 1px;
+      content: ''; position: absolute;
+      bottom: -2px; left: 0; right: 100%; height: 1px;
       background: var(--accent);
       transition: right 240ms var(--ease-out);
     }
 
+    @media (hover: hover) and (pointer: fine) {
+      .nav-links a:hover { color: var(--fg); }
+      .nav-links a:hover::after { right: 0; }
+    }
+
+    .nav-links a.nav-active { color: var(--fg); }
+    .nav-links a.nav-active::after { right: 0; }
+
     @media (max-width: 480px) {
-      .nav-inner { padding: 0 20px; }
-      .nav-links  { gap: 18px; }
-      .nav-links a { font-size: 12px; }
+      .nav-inner { padding: 0 16px; }
+      .nav-links  { gap: 16px; }
+      .nav-links a { font-size: 11px; }
     }
 
     /* ── Layout ── */
     main { padding-top: 52px; }
 
     .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 32px;
+      max-width: 780px; margin: 0 auto; padding: 0 32px;
     }
 
-    section {
-      border-bottom: 1px solid var(--border);
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
     }
 
+    section { border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
+
+    /* ── Section heading ── */
+    .section-heading {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--fg-subtle); margin-bottom: 40px;
+    }
+    .section-heading::before {
+      content: ''; display: block;
+      width: 20px; height: 1px;
+      background: var(--accent); flex-shrink: 0;
+    }
 
     /* ── Hero ── */
     #hero {
-      padding: 96px 0 100px;
-      position: relative;
-      overflow: hidden;
+      padding: 96px 0 104px;
+      position: relative; overflow: hidden;
     }
 
-    /* subtle grid referencing ML grid search / matrix world */
+    /* pastel blobs */
     #hero::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 5% 30%,  oklch(0.90 0.07 14  / 0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 55% at 95% 75%, oklch(0.90 0.07 155 / 0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 60% 5%,  oklch(0.90 0.07 245 / 0.22) 0%, transparent 60%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #hero::before {
+        background:
+          radial-gradient(ellipse 55% 70% at 5% 30%,  oklch(0.67 0.13 14  / 0.12) 0%, transparent 65%),
+          radial-gradient(ellipse 45% 55% at 95% 75%, oklch(0.60 0.11 155 / 0.10) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 60% at 60% 5%,  oklch(0.60 0.10 245 / 0.08) 0%, transparent 60%);
+      }
     }
 
     #hero .container { position: relative; }
 
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-family: var(--mono);
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-family: var(--mono);
+      color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
       margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(12px);
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 480ms var(--ease-out) forwards;
     }
 
     .hero-badge .dot {
-      display: block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
+      display: block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--accent); flex-shrink: 0;
       animation: pulse-dot 2.8s ease-in-out 1.4s infinite;
     }
 
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1;   transform: scale(1); }
+      0%, 100% { opacity: 1; transform: scale(1); }
       50%       { opacity: 0.25; transform: scale(0.6); }
     }
 
     .hero-name {
       font-family: var(--display);
-      font-size: clamp(3.6rem, 12vw, 6.2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      text-wrap: balance;
+      font-size: clamp(3.6rem, 12vw, 6.4rem);
+      font-weight: 700; letter-spacing: -0.02em;
+      line-height: 0.95; text-wrap: balance;
       margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(12px);
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 480ms var(--ease-out) 80ms forwards;
     }
 
     .hero-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--accent);
-      margin-bottom: 24px;
-      opacity: 0;
-      transform: translateY(12px);
+      width: 40px; height: 2px;
+      background: var(--accent); margin-bottom: 24px;
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 480ms var(--ease-out) 140ms forwards;
     }
 
     .hero-bio {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--fg-muted);
-      line-height: 1.7;
-      max-width: 460px;
-      margin-bottom: 40px;
+      font-size: 16px; font-weight: 300;
+      color: var(--fg-muted); line-height: 1.7;
+      max-width: 460px; margin-bottom: 40px;
       text-wrap: pretty;
-      opacity: 0;
-      transform: translateY(12px);
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 480ms var(--ease-out) 200ms forwards;
     }
 
     .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      opacity: 0;
-      transform: translateY(12px);
+      display: flex; flex-wrap: wrap; gap: 8px;
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 480ms var(--ease-out) 280ms forwards;
     }
 
     .pill-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      font-family: var(--mono);
-      color: var(--fg-muted);
-      padding: 7px 15px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-family: var(--mono);
+      color: var(--fg-muted); padding: 7px 15px;
+      border: 1px solid var(--border); border-radius: 100px;
       transition: color 140ms ease, border-color 180ms ease, transform 160ms var(--ease-out);
     }
 
     .pill-link--primary {
-      color: var(--accent);
-      border-color: var(--accent);
+      color: var(--accent); border-color: var(--accent);
       background: var(--accent-dim);
     }
 
     .pill-link svg { flex-shrink: 0; }
     .pill-link:active { transform: scale(0.97); }
 
-    /* ── Section heading ── */
-    .section-heading {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--fg-subtle);
-      margin-bottom: 36px;
+    @media (hover: hover) and (pointer: fine) {
+      .pill-link:hover { color: var(--fg); border-color: var(--border-hover); }
+      .pill-link--primary:hover { opacity: 0.82; }
     }
 
     /* ── Projects ── */
@@ -313,258 +314,299 @@
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 24px;
-      display: flex;
-      flex-direction: column;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: border-color 200ms ease, background 200ms ease;
+      display: flex; flex-direction: column;
+      opacity: 0; transform: translateY(10px);
+      transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+      overflow: hidden;
+      position: relative;
     }
+
+    /* colored top accent bar per project */
+    .project-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .project-card.p1::before { background: var(--p1); }
+    .project-card.p2::before { background: var(--p2); }
+    .project-card.p3::before { background: var(--p3); }
+    .project-card.p4::before { background: var(--p4); }
 
     .project-card.visible {
       animation: fadeUp 360ms var(--ease-out) forwards;
     }
 
+    @media (hover: hover) and (pointer: fine) {
+      .project-card:hover {
+        border-color: var(--border-hover);
+        background: var(--bg-card-hover);
+        box-shadow: 0 6px 32px oklch(0 0 0 / 0.06);
+      }
+      .project-card.p1:hover { box-shadow: 0 6px 32px var(--p1-dim); }
+      .project-card.p2:hover { box-shadow: 0 6px 32px var(--p2-dim); }
+      .project-card.p3:hover { box-shadow: 0 6px 32px var(--p3-dim); }
+      .project-card.p4:hover { box-shadow: 0 6px 32px var(--p4-dim); }
+      .project-card:hover .metric-reveal { clip-path: inset(0 0% 0 0); }
+    }
+
+    .project-card:focus-within .metric-reveal { clip-path: inset(0 0% 0 0); }
+
+    .project-tag-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .project-category {
+      font-size: 9px; font-family: var(--mono);
+      letter-spacing: 0.10em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .p1 .project-category { color: var(--p1); background: var(--p1-bg); }
+    .p2 .project-category { color: var(--p2); background: var(--p2-bg); }
+    .p3 .project-category { color: var(--p3); background: var(--p3-bg); }
+    .p4 .project-category { color: var(--p4); background: var(--p4-bg); }
+
     .project-title {
-      font-family: var(--display);
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
+      font-family: var(--display); font-size: 18px;
+      font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;
     }
 
     .project-desc {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--fg-muted);
-      line-height: 1.65;
-      flex: 1;
-      margin-bottom: 18px;
-      text-wrap: pretty;
+      font-size: 13px; font-weight: 300;
+      color: var(--fg-muted); line-height: 1.65;
+      flex: 1; margin-bottom: 18px; text-wrap: pretty;
     }
 
     .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 16px;
+      display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px;
     }
 
     .tag {
-      font-size: 10px;
-      font-family: var(--mono);
-      color: var(--fg-subtle);
-      padding: 3px 8px;
-      border: 1px solid var(--border);
-      border-radius: 3px;
+      font-size: 10px; font-family: var(--mono);
+      color: var(--fg-subtle); padding: 3px 8px;
+      border: 1px solid var(--border); border-radius: 3px;
       letter-spacing: 0.02em;
+      transition: border-color 160ms ease, color 160ms ease;
     }
 
-    /* ── Metric strip ── */
+    /* metric strip */
     .metric-strip {
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
+      position: relative; border-top: 1px solid var(--border);
+      padding-top: 14px; overflow: hidden; min-height: 52px;
+    }
+
+    .metric-hint {
+      display: block; font-size: 9px; font-family: var(--mono);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--fg-subtle); line-height: 1; padding-top: 4px;
+      user-select: none;
+    }
+
+    .metric-reveal {
+      position: absolute; inset: 0; padding: 0 0 0 2px;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--bg-card);
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 360ms var(--ease-out);
     }
 
     .metric-reveal-label {
-      display: block;
-      font-size: 9px;
-      font-family: var(--mono);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--fg-subtle);
-      margin-bottom: 4px;
-      transition: color 240ms ease;
+      font-size: 9px; font-family: var(--mono);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--fg-muted); margin-bottom: 3px;
     }
 
     .metric-reveal-value {
-      display: block;
-      font-family: var(--display);
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--fg-subtle);
-      line-height: 1;
-      transition: color 280ms var(--ease-out);
+      font-family: var(--display); font-size: 28px;
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1;
     }
 
-    .project-footer { margin-top: 16px; }
+    .p1 .metric-reveal-value { color: var(--p1); }
+    .p2 .metric-reveal-value { color: var(--p2); }
+    .p3 .metric-reveal-value { color: var(--p3); }
+    .p4 .metric-reveal-value { color: var(--p4); }
+
+    @media (hover: none) {
+      .metric-reveal { clip-path: inset(0 0% 0 0); }
+      .metric-hint   { display: none; }
+    }
+
+    .project-footer {
+      margin-top: 16px; display: flex; gap: 14px;
+    }
 
     .repo-link {
-      font-size: 11px;
-      font-family: var(--mono);
-      color: var(--fg-subtle);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+      font-size: 11px; font-family: var(--mono);
+      color: var(--fg-subtle); display: inline-flex;
+      align-items: center; gap: 5px;
       transition: color 140ms ease;
+    }
+
+    .demo-link {
+      font-size: 11px; font-family: var(--mono);
+      display: inline-flex; align-items: center; gap: 5px;
+      font-weight: 500;
+      transition: color 140ms ease, opacity 140ms ease;
+    }
+
+    .p1 .demo-link { color: var(--p1); }
+    .p2 .demo-link { color: var(--p2); }
+    .p3 .demo-link { color: var(--p3); }
+    .p4 .demo-link { color: var(--p4); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .repo-link:hover { color: var(--fg-muted); }
+      .demo-link:hover { opacity: 0.72; }
     }
 
     /* ── Skills ── */
     #skills { padding: 64px 0; }
 
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
     }
 
     @media (max-width: 560px) {
-      .skills-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .skills-grid { grid-template-columns: 1fr; gap: 28px; }
     }
 
     .skill-group-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--fg-subtle);
-      margin-bottom: 16px;
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      margin-bottom: 14px; font-weight: 500;
     }
+
+    .sg-p1 { color: var(--p1); }
+    .sg-p2 { color: var(--p2); }
+    .sg-p3 { color: var(--p3); }
 
     .skill-list li {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--fg-muted);
-      line-height: 1.5;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
+      font-size: 13px; font-weight: 400;
+      color: var(--fg-muted); line-height: 1.5;
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+      transition: color 140ms ease;
     }
-
     .skill-list li:last-child { border-bottom: none; }
-
-    .skill-list li strong {
-      color: var(--fg);
-      font-weight: 500;
-    }
+    .skill-list li strong { color: var(--fg); font-weight: 500; }
 
     /* ── About ── */
     #about { padding: 80px 0; }
 
     .about-body {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--fg-muted);
-      max-width: 540px;
+      font-size: 15px; font-weight: 400;
+      line-height: 1.8; color: var(--fg-muted); max-width: 540px;
     }
-
     .about-body p + p { margin-top: 18px; }
-
     .about-body a {
-      color: var(--fg);
-      font-weight: 400;
+      color: var(--fg); font-weight: 500;
       border-bottom: 1px solid var(--border);
       transition: border-color 140ms ease;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .about-body a:hover { border-color: var(--fg-muted); }
     }
 
     /* ── Contact ── */
     #contact { padding: 72px 0 96px; }
 
     .contact-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11px;
-      font-family: var(--mono);
-      color: var(--accent);
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-family: var(--mono);
+      color: var(--accent); letter-spacing: 0.07em;
+      text-transform: uppercase; margin-bottom: 20px;
     }
-
     .contact-status::before {
-      content: '';
-      display: block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
+      content: ''; display: block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
     }
 
-    .contact-email {
-      display: block;
+    .contact-heading {
       font-family: var(--display);
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--fg);
-      margin-bottom: 36px;
-      transition: color 140ms ease;
+      font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+      font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.1; margin-bottom: 12px;
+    }
+
+    .contact-subtext {
+      font-size: 14px; color: var(--fg-muted); font-weight: 300;
+      margin-bottom: 36px; max-width: 380px; line-height: 1.6;
+    }
+
+    .contact-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 13px; font-weight: 500;
+      color: #fff; background: var(--accent);
+      padding: 12px 24px; border-radius: 100px;
+      margin-bottom: 40px;
+      transition: opacity 160ms ease, transform 160ms var(--ease-out);
+    }
+    .contact-cta:active { transform: scale(0.97); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .contact-cta:hover { opacity: 0.85; }
+    }
+
+    .contact-email-plain {
+      display: block; font-family: var(--mono); font-size: 13px;
+      color: var(--fg-subtle); margin-bottom: 32px;
     }
 
     .contact-socials { display: flex; gap: 24px; }
 
     .contact-social-link {
-      font-size: 12px;
-      font-family: var(--mono);
-      color: var(--fg-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 12px; font-family: var(--mono);
+      color: var(--fg-muted); display: inline-flex;
+      align-items: center; gap: 6px;
       transition: color 140ms ease;
     }
 
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
+    @media (hover: hover) and (pointer: fine) {
+      .contact-social-link:hover { color: var(--fg); }
     }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 24px 0; }
 
     .footer-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 780px; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
     .footer-inner > span {
-      font-size: 11px;
-      font-family: var(--mono);
-      color: var(--fg-subtle);
+      font-size: 11px; font-family: var(--mono); color: var(--fg-subtle);
     }
 
     /* ── Keyframes ── */
     @keyframes fadeUp   { to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeOnly { to { opacity: 1; transform: none; } }
 
-    /* ── Hover states ── */
-    @media (hover: hover) and (pointer: fine) {
-      .nav-links a:hover                    { color: var(--fg); }
-      .nav-links a:hover::after             { right: 0; }
-      .pill-link:hover                      { color: var(--fg); border-color: var(--border-hover); }
-      .pill-link--primary:hover             { color: var(--accent); border-color: var(--accent); }
-      .project-card:hover                        { border-color: var(--border-hover); background: var(--bg-card-hover); }
-      .project-card:hover .metric-reveal-value   { color: var(--accent); }
-      .project-card:hover .metric-reveal-label   { color: var(--fg-muted); }
-      .repo-link:hover                      { color: var(--fg-muted); }
-      .about-body a:hover                   { border-color: var(--fg-muted); }
-      .contact-email:hover                  { color: var(--accent); }
-      .contact-social-link:hover            { color: var(--fg); }
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      #hero     { padding: 64px 0 72px; }
+      #projects { padding: 56px 0; }
+      #skills   { padding: 48px 0; }
+      #about    { padding: 56px 0; }
+      #contact  { padding: 56px 0 72px; }
+      .hero-bio { font-size: 15px; }
+      .hero-links { gap: 7px; }
+      .contact-socials { flex-direction: column; gap: 14px; }
+      .footer-inner { flex-direction: column; gap: 6px; text-align: center; }
+      .project-footer { flex-direction: column; gap: 8px; }
     }
-
-    .project-card:focus-within .metric-reveal-value { color: var(--accent); }
-    .project-card:focus-within .metric-reveal-label { color: var(--fg-muted); }
-
-    /* ── Nav active ── */
-    .nav-links a.nav-active         { color: var(--fg); }
-    .nav-links a.nav-active::after  { right: 0; }
 
     /* ── Reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
-      .hero-badge,
-      .hero-name,
-      .hero-rule,
-      .hero-bio,
-      .hero-links                { animation: fadeOnly 200ms ease forwards; }
-      .project-card.visible      { animation: fadeOnly 200ms ease forwards; }
-      .metric-reveal-value,
-      .metric-reveal-label       { transition: none; }
-      .nav-links a::after        { transition: none; }
-      .hero-badge .dot           { animation: none; }
+      .hero-badge, .hero-name, .hero-rule,
+      .hero-bio, .hero-links { animation: fadeOnly 200ms ease forwards; }
+      .project-card.visible  { animation: fadeOnly 200ms ease forwards; }
+      .metric-reveal         { transition: none; }
+      .nav-links a::after    { transition: none; }
+      .hero-badge .dot       { animation: none; }
     }
   </style>
 </head>
@@ -586,6 +628,9 @@
     <symbol id="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 8h10M9 4l4 4-4 4"/>
     </symbol>
+    <symbol id="icon-external" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/>
+    </symbol>
   </svg>
 
   <nav aria-label="Main navigation">
@@ -602,138 +647,182 @@
 
   <main>
 
-    <!-- Hero: outside container so the grid goes full-width -->
     <section id="hero">
       <div class="container">
-          <p class="hero-badge">
-            <span class="dot" aria-hidden="true"></span>
-            Available for opportunities
-          </p>
-          <h1 class="hero-name">Nino<br>Cabrera</h1>
-          <div class="hero-rule" aria-hidden="true"></div>
-          <p class="hero-bio">
-            Data scientist. I build ML systems that work in
-            production, not just notebooks.
-          </p>
-          <div class="hero-links">
-            <a href="https://github.com/ninocvl" class="pill-link" target="_blank" rel="noopener noreferrer">
-              <svg width="13" height="13" aria-hidden="true"><use href="#icon-github"/></svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/nino-cabrera-466556273" class="pill-link" target="_blank" rel="noopener noreferrer">
-              <svg width="13" height="13" aria-hidden="true"><use href="#icon-linkedin"/></svg>
-              LinkedIn
-            </a>
-            <a href="mailto:n.cabrera2411@gmail.com" class="pill-link pill-link--primary">
-              <svg width="13" height="13" aria-hidden="true"><use href="#icon-email"/></svg>
-              Get in touch
-            </a>
-          </div>
+        <p class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Available for opportunities
+        </p>
+        <h1 class="hero-name">Nino<br>Cabrera</h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-bio">
+          Data scientist based in Barranquilla. I build ML systems that work
+          in production, not just notebooks.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/ninocvl" class="pill-link" target="_blank" rel="noopener noreferrer">
+            <svg width="13" height="13" aria-hidden="true"><use href="#icon-github"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/nino-cabrera-466556273" class="pill-link" target="_blank" rel="noopener noreferrer">
+            <svg width="13" height="13" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:n.cabrera2411@gmail.com" class="pill-link pill-link--primary">
+            <svg width="13" height="13" aria-hidden="true"><use href="#icon-email"/></svg>
+            Get in touch
+          </a>
+        </div>
       </div>
     </section>
 
     <div class="container">
 
-      <!-- Projects -->
       <section id="projects">
         <h2 class="section-heading">Projects</h2>
         <div class="projects-grid">
 
-          <article class="project-card" aria-label="Customer Churn Model">
-            <h3 class="project-title">Customer Churn Model</h3>
+          <!-- Heart Failure Prediction -->
+          <article class="project-card p1" aria-label="Heart Failure Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">MLOps</span>
+            </div>
+            <h3 class="project-title">Heart Failure Prediction</h3>
             <p class="project-desc">
-              Predicts churn 30 days out using behavioral and transactional signals.
-              SHAP explanations make every prediction auditable by the business team.
+              End-to-end MLOps pipeline for cardiac risk classification.
+              Random Forest trained on 918 patients, served via FastAPI,
+              containerized with Docker, orchestrated on Kubernetes, and
+              monitored for data drift with Evidently.
+            </p>
+            <div class="project-tags">
+              <span class="tag">scikit-learn</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Evidently</span>
+              <span class="tag">Gradio</span>
+            </div>
+            <div class="metric-strip" aria-label="Key result: AUC 0.931">
+              <span class="metric-hint">Key result</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-label">Key result</span>
+                <span class="metric-reveal-value">AUC 0.931</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/ninocvl/Mini-Proyecto-Prediccion-Fallo-Cardiaco" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
+                GitHub
+              </a>
+              <a href="https://heart-frontend-gnfl.onrender.com" class="demo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true"><use href="#icon-external"/></svg>
+                Live demo
+              </a>
+            </div>
+          </article>
+
+          <!-- Telco Churn -->
+          <article class="project-card p2" aria-label="Telco Churn Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">MLOps</span>
+            </div>
+            <h3 class="project-title">Telco Churn Prediction</h3>
+            <p class="project-desc">
+              Churn classifier over 7,000 telecom customers. Compared
+              RandomForest, XGBoost, CatBoost, and LightGBM with three
+              balancing strategies. XGBoost with class weights won.
+              Deployed with FastAPI, LIME explanations included.
             </p>
             <div class="project-tags">
               <span class="tag">XGBoost</span>
-              <span class="tag">SHAP</span>
+              <span class="tag">LIME</span>
               <span class="tag">FastAPI</span>
               <span class="tag">Docker</span>
+              <span class="tag">Gradio</span>
+              <span class="tag">CI/CD</span>
             </div>
-            <div class="metric-strip" aria-label="Key result: 89% AUC">
-              <span class="metric-reveal-label">Key result</span>
-              <span class="metric-reveal-value">89% AUC</span>
+            <div class="metric-strip" aria-label="Key result: ROC-AUC 0.847">
+              <span class="metric-hint">Key result</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-label">ROC-AUC</span>
+                <span class="metric-reveal-value">0.847</span>
+              </div>
             </div>
             <div class="project-footer">
-              <!-- TODO: update with real repo URL -->
               <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                View on GitHub
+                GitHub
+              </a>
+              <a href="https://telco-churn-front.onrender.com" class="demo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true"><use href="#icon-external"/></svg>
+                Live demo
               </a>
             </div>
           </article>
 
-          <article class="project-card" aria-label="Sales Forecast Pipeline">
-            <h3 class="project-title">Sales Forecast Pipeline</h3>
+          <!-- Bitcoin Prediction -->
+          <article class="project-card p3" aria-label="Bitcoin Price Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">Research</span>
+            </div>
+            <h3 class="project-title">Bitcoin Price Prediction</h3>
             <p class="project-desc">
-              End-to-end from raw transactions to weekly predictions.
-              dbt handles transforms, Airflow schedules, Prophet predicts.
+              Time-series research on 7.4 million BTC/USD observations
+              (2012-present, 15-min intervals). Explored ARIMA, SVR,
+              and hybrid models. Covered stationarity testing, ACF/PACF
+              analysis, and anomaly detection.
             </p>
             <div class="project-tags">
-              <span class="tag">Prophet</span>
-              <span class="tag">Airflow</span>
-              <span class="tag">dbt</span>
-              <span class="tag">BigQuery</span>
+              <span class="tag">ARIMA</span>
+              <span class="tag">SVR</span>
+              <span class="tag">pandas</span>
+              <span class="tag">statsmodels</span>
+              <span class="tag">Kaggle</span>
             </div>
-            <div class="metric-strip" aria-label="Key result: 12% MAPE">
-              <span class="metric-reveal-label">Key result</span>
-              <span class="metric-reveal-value">12% MAPE</span>
+            <div class="metric-strip" aria-label="Key result: 7.4M data points">
+              <span class="metric-hint">Dataset scale</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-label">Data points</span>
+                <span class="metric-reveal-value">7.4M</span>
+              </div>
             </div>
             <div class="project-footer">
-              <!-- TODO: update with real repo URL -->
               <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                View on GitHub
+                GitHub
               </a>
             </div>
           </article>
 
-          <article class="project-card" aria-label="Resume Screening NLP">
-            <h3 class="project-title">Resume Screening NLP</h3>
+          <!-- University Dropout -->
+          <article class="project-card p4" aria-label="University Dropout Risk">
+            <div class="project-tag-row">
+              <span class="project-category">Classification</span>
+            </div>
+            <h3 class="project-title">University Dropout Risk</h3>
             <p class="project-desc">
-              Ranks candidates by semantic similarity to job descriptions.
-              Sentence embeddings — no keyword rules, no regex spaghetti.
+              Predicts student dropout risk from a 151-column institutional
+              dataset. Handled 58 high-NA columns, removed leakage variables,
+              and selected features via Mutual Information. Modeled in both
+              PySpark and scikit-learn.
             </p>
             <div class="project-tags">
-              <span class="tag">sentence-transformers</span>
-              <span class="tag">FAISS</span>
-              <span class="tag">Streamlit</span>
+              <span class="tag">PySpark</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">Mutual Info</span>
+              <span class="tag">StratifiedKFold</span>
             </div>
-            <div class="metric-strip" aria-label="Key result: 60% less screening time">
-              <span class="metric-reveal-label">Key result</span>
-              <span class="metric-reveal-value">&#8722;60% screen time</span>
-            </div>
-            <div class="project-footer">
-              <!-- TODO: update with real repo URL -->
-              <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
-                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                View on GitHub
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-label="Fraud Detection API">
-            <h3 class="project-title">Fraud Detection API</h3>
-            <p class="project-desc">
-              Real-time transaction scoring under 100ms.
-              LightGBM served via FastAPI, feature store backed by Redis.
-            </p>
-            <div class="project-tags">
-              <span class="tag">LightGBM</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Redis</span>
-              <span class="tag">Kafka</span>
-            </div>
-            <div class="metric-strip" aria-label="Key result: 97.3% precision">
-              <span class="metric-reveal-label">Key result</span>
-              <span class="metric-reveal-value">97.3% precision</span>
+            <div class="metric-strip" aria-label="Key result: 93 features selected">
+              <span class="metric-hint">After feature selection</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-label">Features kept</span>
+                <span class="metric-reveal-value">93 / 151</span>
+              </div>
             </div>
             <div class="project-footer">
-              <!-- TODO: update with real repo URL -->
               <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                View on GitHub
+                GitHub
               </a>
             </div>
           </article>
@@ -741,50 +830,48 @@
         </div>
       </section>
 
-      <!-- Skills -->
       <section id="skills">
         <h2 class="section-heading">Skills</h2>
         <div class="skills-grid">
           <div>
-            <p class="skill-group-label">ML / DL</p>
+            <p class="skill-group-label sg-p1">ML / DL</p>
             <ul class="skill-list">
               <li><strong>scikit-learn</strong> · daily modeling</li>
               <li><strong>XGBoost / LightGBM</strong> · structured data</li>
-              <li><strong>PyTorch</strong> · neural nets</li>
-              <li><strong>HuggingFace</strong> · NLP fine-tuning</li>
-              <li><strong>SHAP</strong> · model explainability</li>
+              <li><strong>CatBoost</strong> · gradient boosting</li>
+              <li><strong>ARIMA / statsmodels</strong> · time series</li>
+              <li><strong>SHAP / LIME</strong> · interpretability</li>
             </ul>
           </div>
           <div>
-            <p class="skill-group-label">Data engineering</p>
+            <p class="skill-group-label sg-p2">Data engineering</p>
             <ul class="skill-list">
-              <li><strong>SQL / dbt</strong> · transforms</li>
-              <li><strong>Airflow</strong> · orchestration</li>
+              <li><strong>PySpark</strong> · large-scale processing</li>
               <li><strong>pandas / polars</strong> · wrangling</li>
-              <li><strong>Kafka</strong> · streaming</li>
-              <li><strong>BigQuery / Snowflake</strong></li>
+              <li><strong>SQL</strong> · transforms</li>
+              <li><strong>Evidently</strong> · drift monitoring</li>
+              <li><strong>Kaggle / APIs</strong> · data sourcing</li>
             </ul>
           </div>
           <div>
-            <p class="skill-group-label">Deployment</p>
+            <p class="skill-group-label sg-p3">Deployment</p>
             <ul class="skill-list">
               <li><strong>FastAPI</strong> · model serving</li>
-              <li><strong>Docker / GCP</strong></li>
-              <li><strong>MLflow</strong> · experiment tracking</li>
-              <li><strong>Streamlit</strong> · internal tools</li>
-              <li><strong>Git</strong></li>
+              <li><strong>Docker / Kubernetes</strong></li>
+              <li><strong>Gradio</strong> · ML interfaces</li>
+              <li><strong>GitHub Actions</strong> · CI/CD</li>
+              <li><strong>Render</strong> · cloud deploy</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- About -->
       <section id="about">
         <h2 class="section-heading">About</h2>
         <div class="about-body">
           <p>
             I'm a data scientist based in Barranquilla, Colombia. I got into this
-            field because I wanted to build things that actually get used — which
+            field because I wanted to build things that actually get used, which
             meant learning the whole path from a messy CSV to a live API.
           </p>
           <p>
@@ -800,11 +887,16 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section id="contact">
         <h2 class="section-heading">Contact</h2>
         <p class="contact-status">Open to full-time roles and consulting</p>
-        <a href="mailto:n.cabrera2411@gmail.com" class="contact-email">
+        <p class="contact-heading">Let's build something<br>worth deploying.</p>
+        <p class="contact-subtext">
+          Whether it's a modeling problem, a production pipeline, or something
+          in between, I'm happy to talk.
+        </p>
+        <a href="mailto:n.cabrera2411@gmail.com" class="contact-cta">
+          <svg width="14" height="14" aria-hidden="true"><use href="#icon-email"/></svg>
           n.cabrera2411@gmail.com
         </a>
         <div class="contact-socials">
@@ -819,21 +911,20 @@
         </div>
       </section>
 
-    </div><!-- /.container -->
+    </div>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <span>Nino Cabrera &mdash; 2026</span>
+      <span>Nino Cabrera - 2026</span>
       <span>Barranquilla, Colombia</span>
     </div>
   </footer>
 
   <script>
-    // Card scroll-reveal
+    // Card entrance animation
     const cards = document.querySelectorAll('.project-card');
     const isSingleCol = () => window.matchMedia('(max-width: 560px)').matches;
-
     const cardObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, i) => {
@@ -845,25 +936,22 @@
       },
       { threshold: 0.1 }
     );
-
     cards.forEach(card => cardObserver.observe(card));
 
-    // Active nav section tracking
-    const sections    = document.querySelectorAll('section[id]');
-    const navLinks    = document.querySelectorAll('.nav-links a');
-
+    // Active nav
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
     const navObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
-          navLinks.forEach(link => link.classList.remove('nav-active'));
+          navLinks.forEach(l => l.classList.remove('nav-active'));
           const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
           if (active) active.classList.add('nav-active');
         });
       },
       { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
     );
-
     sections.forEach(s => navObserver.observe(s));
   </script>
 
