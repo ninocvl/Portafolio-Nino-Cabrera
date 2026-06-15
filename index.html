@@ -20,43 +20,66 @@
     a  { color: inherit; text-decoration: none; }
 
     :root {
-      --bg:            oklch(0.09 0 0);
-      --bg-card:       oklch(0.12 0 0);
-      --bg-card-hover: oklch(0.135 0 0);
-      --bg-metric:     oklch(0.15 0 0);
-      --border:        oklch(0.19 0 0);
-      --border-hover:  oklch(0.32 0 0);
-      --fg:            oklch(0.93 0 0);
-      --fg-muted:      oklch(0.60 0 0);
-      --fg-subtle:     oklch(0.38 0 0);
-      --accent:        oklch(0.73 0.155 192);
-      --accent-dim:    oklch(0.73 0.155 192 / 0.10);
-      --accent-glow:   oklch(0.73 0.155 192 / 0.18);
-      --grid-line:     oklch(0.73 0.155 192 / 0.055);
+      --bg:            oklch(0.97 0.006 70);
+      --bg-card:       #ffffff;
+      --bg-card-hover: oklch(0.985 0.008 70);
+      --bg-metric:     var(--bg-card);
+      --border:        oklch(0.91 0.004 70);
+      --border-hover:  oklch(0.80 0.006 70);
+      --fg:            oklch(0.13 0.010 70);
+      --fg-muted:      oklch(0.46 0.008 70);
+      --fg-subtle:     oklch(0.65 0.005 70);
+      --accent:        oklch(0.62 0.145 25);
+      --accent-dim:    oklch(0.62 0.145 25 / 0.10);
+      --accent-glow:   oklch(0.62 0.145 25 / 0.18);
+      --grid-line:     oklch(0.62 0.145 25 / 0.06);
+      --p1:            oklch(0.67 0.13 14);
+      --p1-dim:        oklch(0.67 0.13 14 / 0.10);
+      --p1-bg:         oklch(0.96 0.04 14);
+      --p2:            oklch(0.60 0.11 155);
+      --p2-dim:        oklch(0.60 0.11 155 / 0.10);
+      --p2-bg:         oklch(0.96 0.04 155);
+      --p3:            oklch(0.60 0.10 245);
+      --p3-dim:        oklch(0.60 0.10 245 / 0.10);
+      --p3-bg:         oklch(0.96 0.04 245);
+      --p4:            oklch(0.62 0.11 300);
+      --p4-dim:        oklch(0.62 0.11 300 / 0.10);
+      --p4-bg:         oklch(0.96 0.04 300);
       --sans:          'Barlow', system-ui, sans-serif;
       --display:       'Barlow Condensed', 'Barlow', system-ui, sans-serif;
       --mono:          'Fragment Mono', ui-monospace, 'SF Mono', monospace;
       --ease-out:      cubic-bezier(0.23, 1, 0.32, 1);
-      --radius:        8px;
-      color-scheme:    dark;
+      --radius:        10px;
+      color-scheme:    light;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       :root {
-        --bg:            oklch(0.98 0 0);
-        --bg-card:       oklch(0.95 0 0);
-        --bg-card-hover: oklch(0.92 0 0);
-        --bg-metric:     oklch(0.90 0 0);
-        --border:        oklch(0.89 0 0);
-        --border-hover:  oklch(0.74 0 0);
-        --fg:            oklch(0.13 0 0);
-        --fg-muted:      oklch(0.44 0 0);
-        --fg-subtle:     oklch(0.56 0 0);
-        --accent:        oklch(0.46 0.155 192);
-        --accent-dim:    oklch(0.46 0.155 192 / 0.09);
-        --accent-glow:   oklch(0.46 0.155 192 / 0.14);
-        --grid-line:     oklch(0.46 0.155 192 / 0.07);
-        color-scheme:    light;
+        --bg:            oklch(0.11 0.010 255);
+        --bg-card:       oklch(0.14 0.010 255);
+        --bg-card-hover: oklch(0.17 0.010 255);
+        --bg-metric:     var(--bg-card);
+        --border:        oklch(0.21 0.010 255);
+        --border-hover:  oklch(0.34 0.008 255);
+        --fg:            oklch(0.93 0 0);
+        --fg-muted:      oklch(0.60 0 0);
+        --fg-subtle:     oklch(0.40 0 0);
+        --accent:        oklch(0.74 0.130 25);
+        --accent-dim:    oklch(0.74 0.130 25 / 0.12);
+        --accent-glow:   oklch(0.74 0.130 25 / 0.20);
+        --p1:            oklch(0.76 0.110 14);
+        --p1-dim:        oklch(0.76 0.110 14 / 0.12);
+        --p1-bg:         oklch(0.76 0.110 14 / 0.08);
+        --p2:            oklch(0.72 0.090 155);
+        --p2-dim:        oklch(0.72 0.090 155 / 0.12);
+        --p2-bg:         oklch(0.72 0.090 155 / 0.08);
+        --p3:            oklch(0.72 0.085 245);
+        --p3-dim:        oklch(0.72 0.085 245 / 0.12);
+        --p3-bg:         oklch(0.72 0.085 245 / 0.08);
+        --p4:            oklch(0.74 0.090 300);
+        --p4-dim:        oklch(0.74 0.090 300 / 0.12);
+        --p4-bg:         oklch(0.74 0.090 300 / 0.08);
+        color-scheme:    dark;
       }
     }
 
@@ -183,12 +206,21 @@
     }
 
     #hero::before {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 5% 30%,  oklch(0.90 0.07 14  / 0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 55% at 95% 75%, oklch(0.90 0.07 155 / 0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 60% 5%,  oklch(0.90 0.07 245 / 0.22) 0%, transparent 60%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #hero::before {
+        background:
+          radial-gradient(ellipse 55% 70% at 5% 30%,  oklch(0.67 0.13 14  / 0.12) 0%, transparent 65%),
+          radial-gradient(ellipse 45% 55% at 95% 75%, oklch(0.60 0.11 155 / 0.10) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 60% at 60% 5%,  oklch(0.60 0.10 245 / 0.08) 0%, transparent 60%);
+      }
     }
 
     #hero .container { position: relative; }
@@ -279,11 +311,34 @@
       display: flex; flex-direction: column;
       cursor: pointer; opacity: 0; transform: translateY(10px);
       transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+      overflow: hidden; position: relative;
     }
+
+    .project-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .project-card.p1::before { background: var(--p1); }
+    .project-card.p2::before { background: var(--p2); }
+    .project-card.p3::before { background: var(--p3); }
 
     .project-card.visible {
       animation: fadeUp 360ms var(--ease-out) forwards;
     }
+
+    .project-tag-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+    }
+
+    .project-category {
+      font-size: 9px; font-family: var(--mono);
+      letter-spacing: 0.10em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 100px; font-weight: 500;
+    }
+    .p1 .project-category { color: var(--p1); background: var(--p1-bg); }
+    .p2 .project-category { color: var(--p2); background: var(--p2-bg); }
+    .p3 .project-category { color: var(--p3); background: var(--p3-bg); }
 
     .project-title {
       font-family: var(--display); font-size: 18px;
@@ -291,7 +346,7 @@
     }
 
     .project-desc {
-      font-size: 13px; font-weight: 400;
+      font-size: 13px; font-weight: 300;
       color: var(--fg-muted); line-height: 1.65;
       flex: 1; margin-bottom: 18px; text-wrap: pretty;
     }
@@ -302,7 +357,7 @@
 
     .tag {
       font-size: 10px; font-family: var(--mono);
-      color: var(--fg-muted); padding: 3px 8px;
+      color: var(--fg-subtle); padding: 3px 8px;
       border: 1px solid var(--border); border-radius: 3px;
       letter-spacing: 0.02em;
       transition: border-color 160ms ease, color 160ms ease;
@@ -318,29 +373,31 @@
       display: block; font-size: 9px; font-family: var(--mono);
       letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--fg-subtle); line-height: 1;
-      padding-top: 6px; user-select: none;
+      padding-top: 4px; user-select: none;
     }
 
     .metric-reveal {
       position: absolute; inset: 0; padding: 0 2px;
-      display: flex; align-items: center;
-      background: var(--bg-metric);
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--bg-card);
       clip-path: inset(0 100% 0 0);
       transition: clip-path 360ms var(--ease-out);
     }
 
     .metric-reveal-value {
       font-family: var(--display); font-size: 28px;
-      font-weight: 700; letter-spacing: -0.03em;
-      color: var(--accent); line-height: 1;
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1;
     }
+    .p1 .metric-reveal-value { color: var(--p1); }
+    .p2 .metric-reveal-value { color: var(--p2); }
+    .p3 .metric-reveal-value { color: var(--p3); }
 
     @media (hover: none) {
       .metric-reveal { clip-path: inset(0 0% 0 0); }
       .metric-hint   { display: none; }
     }
 
-    .project-footer { margin-top: 16px; }
+    .project-footer { margin-top: 16px; display: flex; gap: 14px; }
 
     .repo-link {
       font-size: 11px; font-family: var(--mono);
@@ -348,6 +405,15 @@
       align-items: center; gap: 5px; cursor: pointer;
       transition: color 140ms ease;
     }
+
+    .demo-link {
+      font-size: 11px; font-family: var(--mono);
+      display: inline-flex; align-items: center; gap: 5px; font-weight: 500;
+      transition: color 140ms ease, opacity 140ms ease;
+    }
+    .p1 .demo-link { color: var(--p1); }
+    .p2 .demo-link { color: var(--p2); }
+    .p3 .demo-link { color: var(--p3); }
 
     /* ── Skills ── */
     #skills { padding: 64px 0; }
@@ -461,18 +527,21 @@
 
     /* ── Hover states ── */
     @media (hover: hover) and (pointer: fine) {
-      .nav-links a:hover                         { color: var(--fg); }
-      .nav-links a:hover::after                  { right: 0; }
-      .lang-toggle:hover                         { color: var(--accent); border-color: var(--accent); }
-      .pill-link:hover                           { color: var(--fg); border-color: var(--border-hover); }
-      .pill-link--primary:hover                  { opacity: 0.85; }
-      .project-card:hover                        { border-color: var(--border-hover); background: var(--bg-card-hover); box-shadow: 0 4px 24px oklch(0 0 0 / 0.18); }
-      .project-card:hover .metric-reveal         { clip-path: inset(0 0% 0 0); }
-      .project-card:hover .tag                   { border-color: var(--border-hover); color: var(--fg-muted); }
-      .repo-link:hover                           { color: var(--fg-muted); }
-      .about-body a:hover                        { border-color: var(--fg-muted); }
-      .contact-cta:hover                         { opacity: 0.88; box-shadow: 0 4px 20px var(--accent-glow); }
-      .contact-social-link:hover                 { color: var(--fg); }
+      .nav-links a:hover                 { color: var(--fg); }
+      .nav-links a:hover::after          { right: 0; }
+      .lang-toggle:hover                 { color: var(--accent); border-color: var(--accent); }
+      .pill-link:hover                   { color: var(--fg); border-color: var(--border-hover); }
+      .pill-link--primary:hover          { opacity: 0.82; }
+      .project-card:hover                { border-color: var(--border-hover); background: var(--bg-card-hover); box-shadow: 0 6px 32px oklch(0 0 0 / 0.06); }
+      .project-card.p1:hover             { box-shadow: 0 6px 32px var(--p1-dim); }
+      .project-card.p2:hover             { box-shadow: 0 6px 32px var(--p2-dim); }
+      .project-card.p3:hover             { box-shadow: 0 6px 32px var(--p3-dim); }
+      .project-card:hover .metric-reveal { clip-path: inset(0 0% 0 0); }
+      .repo-link:hover                   { color: var(--fg-muted); }
+      .demo-link:hover                   { opacity: 0.72; }
+      .about-body a:hover                { border-color: var(--fg-muted); }
+      .contact-cta:hover                 { opacity: 0.85; }
+      .contact-social-link:hover         { color: var(--fg); }
     }
 
     .project-card:focus-within .metric-reveal { clip-path: inset(0 0% 0 0); }
@@ -569,7 +638,10 @@
         <h2 class="section-heading"><span class="en">Projects</span><span class="es">Proyectos</span></h2>
         <div class="projects-grid">
 
-          <article class="project-card" aria-label="Telco Churn Prediction">
+          <article class="project-card p2" aria-label="Telco Churn Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">Classification</span>
+            </div>
             <h3 class="project-title"><span class="en">Telco Churn Prediction</span><span class="es">Predicción de Churn Telco</span></h3>
             <p class="project-desc">
               <span class="en">Full ML lifecycle on 7,000 telecom customers. GridSearchCV selects the model, LIME explains individual predictions, FastAPI serves it, Docker ships it.</span>
@@ -582,17 +654,16 @@
               <span class="tag">Gradio</span>
               <span class="tag">Docker</span>
             </div>
-            <div class="metric-strip" aria-label="Live demo available">
-              <span class="metric-hint">live demo</span>
+            <div class="metric-strip" aria-label="Live demo">
+              <span class="metric-hint">demo</span>
               <div class="metric-reveal" aria-hidden="true">
                 <span class="metric-reveal-value">live ↗</span>
               </div>
             </div>
-            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
-              <a href="https://telco-churn-front.onrender.com/" class="repo-link" target="_blank" rel="noopener noreferrer">
+            <div class="project-footer">
+              <a href="https://telco-churn-front.onrender.com/" class="demo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                <span class="en">Live demo</span>
-                <span class="es">Demo en vivo</span>
+                <span class="en">Live demo</span><span class="es">Demo en vivo</span>
               </a>
               <a href="https://github.com/ninocvl/Mini-Proyecto-Telco" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
@@ -601,7 +672,10 @@
             </div>
           </article>
 
-          <article class="project-card" aria-label="Heart Failure Prediction">
+          <article class="project-card p1" aria-label="Heart Failure Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">MLOps</span>
+            </div>
             <h3 class="project-title"><span class="en">Heart Failure Prediction</span><span class="es">Predicción de Fallo Cardíaco</span></h3>
             <p class="project-desc">
               <span class="en">Random Forest classifier on 918 patients. Deployed on Render with a REST API, Gradio frontend, and Evidently reports tracking data drift over time.</span>
@@ -614,17 +688,16 @@
               <span class="tag">Docker</span>
               <span class="tag">Kubernetes</span>
             </div>
-            <div class="metric-strip" aria-label="Live API available">
-              <span class="metric-hint">live api</span>
+            <div class="metric-strip" aria-label="Live demo">
+              <span class="metric-hint">demo</span>
               <div class="metric-reveal" aria-hidden="true">
                 <span class="metric-reveal-value">live ↗</span>
               </div>
             </div>
-            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
-              <a href="https://heart-frontend-gnfl.onrender.com" class="repo-link" target="_blank" rel="noopener noreferrer">
+            <div class="project-footer">
+              <a href="https://heart-frontend-gnfl.onrender.com" class="demo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                <span class="en">Live demo</span>
-                <span class="es">Demo en vivo</span>
+                <span class="en">Live demo</span><span class="es">Demo en vivo</span>
               </a>
               <a href="https://github.com/ninocvl/Mini-Proyecto-Prediccion-Fallo-Cardiaco" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
@@ -633,7 +706,10 @@
             </div>
           </article>
 
-          <article class="project-card" aria-label="Bitcoin Price Prediction">
+          <article class="project-card p3" aria-label="Bitcoin Price Prediction">
+            <div class="project-tag-row">
+              <span class="project-category">Time series</span>
+            </div>
             <h3 class="project-title"><span class="en">Bitcoin Price Prediction</span><span class="es">Predicción de Precio Bitcoin</span></h3>
             <p class="project-desc">
               <span class="en">Hybrid ML models combining classical time-series features with gradient boosting. Three architectures benchmarked against published baselines, tuned with Optuna.</span>
@@ -645,17 +721,16 @@
               <span class="tag">statsmodels</span>
               <span class="tag">Jupyter Book</span>
             </div>
-            <div class="metric-strip" aria-label="Published notebook">
+            <div class="metric-strip" aria-label="Notebook">
               <span class="metric-hint">notebook</span>
               <div class="metric-reveal" aria-hidden="true">
                 <span class="metric-reveal-value">3 models</span>
               </div>
             </div>
-            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
-              <a href="https://ninocvl.github.io/Proyecto-Bitcoin-ML" class="repo-link" target="_blank" rel="noopener noreferrer">
+            <div class="project-footer">
+              <a href="https://ninocvl.github.io/Proyecto-Bitcoin-ML" class="demo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                <span class="en">View notebook</span>
-                <span class="es">Ver notebook</span>
+                <span class="en">View notebook</span><span class="es">Ver notebook</span>
               </a>
               <a href="https://github.com/ninocvl/Proyecto-Bitcoin-ML" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
