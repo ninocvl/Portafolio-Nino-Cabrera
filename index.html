@@ -569,109 +569,97 @@
         <h2 class="section-heading"><span class="en">Projects</span><span class="es">Proyectos</span></h2>
         <div class="projects-grid">
 
-          <article class="project-card" aria-label="Customer Churn Model">
-            <h3 class="project-title"><span class="en">Customer Churn Model</span><span class="es">Modelo de Churn</span></h3>
+          <article class="project-card" aria-label="Telco Churn Prediction">
+            <h3 class="project-title"><span class="en">Telco Churn Prediction</span><span class="es">Predicción de Churn Telco</span></h3>
             <p class="project-desc">
-              <span class="en">Predicts churn 30 days out using behavioral and transactional signals. SHAP explanations make every prediction auditable by the business team.</span>
-              <span class="es">Predice la baja de clientes 30 días antes usando señales de comportamiento y transacciones. Las explicaciones SHAP hacen que cada predicción sea auditable por el equipo de negocio.</span>
+              <span class="en">Full ML lifecycle on 7,000 telecom customers. GridSearchCV selects the model, LIME explains individual predictions, FastAPI serves it, Docker ships it.</span>
+              <span class="es">Ciclo completo de ML en 7,000 clientes de telecomunicaciones. GridSearchCV selecciona el modelo, LIME explica cada predicción, FastAPI lo sirve, Docker lo despliega.</span>
+            </p>
+            <div class="project-tags">
+              <span class="tag">scikit-learn</span>
+              <span class="tag">LIME</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Gradio</span>
+              <span class="tag">Docker</span>
+            </div>
+            <div class="metric-strip" aria-label="Live demo available">
+              <span class="metric-hint">live demo</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-value">live ↗</span>
+              </div>
+            </div>
+            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
+              <a href="https://telco-churn-front.onrender.com/" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span class="en">Live demo</span>
+                <span class="es">Demo en vivo</span>
+              </a>
+              <a href="https://github.com/ninocvl/Mini-Proyecto-Telco" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" aria-label="Heart Failure Prediction">
+            <h3 class="project-title"><span class="en">Heart Failure Prediction</span><span class="es">Predicción de Fallo Cardíaco</span></h3>
+            <p class="project-desc">
+              <span class="en">Random Forest classifier on 918 patients. Deployed on Render with a REST API, Gradio frontend, and Evidently reports tracking data drift over time.</span>
+              <span class="es">Clasificador Random Forest en 918 pacientes. Desplegado en Render con API REST, frontend Gradio y reportes de Evidently para monitoreo de drift.</span>
+            </p>
+            <div class="project-tags">
+              <span class="tag">scikit-learn</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Evidently</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+            </div>
+            <div class="metric-strip" aria-label="Live API available">
+              <span class="metric-hint">live api</span>
+              <div class="metric-reveal" aria-hidden="true">
+                <span class="metric-reveal-value">live ↗</span>
+              </div>
+            </div>
+            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
+              <a href="https://heart-frontend-gnfl.onrender.com" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span class="en">Live demo</span>
+                <span class="es">Demo en vivo</span>
+              </a>
+              <a href="https://github.com/ninocvl/Mini-Proyecto-Prediccion-Fallo-Cardiaco" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" aria-label="Bitcoin Price Prediction">
+            <h3 class="project-title"><span class="en">Bitcoin Price Prediction</span><span class="es">Predicción de Precio Bitcoin</span></h3>
+            <p class="project-desc">
+              <span class="en">Hybrid ML models combining classical time-series features with gradient boosting. Three architectures benchmarked against published baselines, tuned with Optuna.</span>
+              <span class="es">Modelos híbridos que combinan características de series de tiempo clásicas con gradient boosting. Tres arquitecturas comparadas contra baselines publicados, ajustados con Optuna.</span>
             </p>
             <div class="project-tags">
               <span class="tag">XGBoost</span>
-              <span class="tag">SHAP</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Docker</span>
+              <span class="tag">Optuna</span>
+              <span class="tag">statsmodels</span>
+              <span class="tag">Jupyter Book</span>
             </div>
-            <div class="metric-strip" aria-label="Key result: 89% AUC">
-              <span class="metric-hint">AUC</span>
+            <div class="metric-strip" aria-label="Published notebook">
+              <span class="metric-hint">notebook</span>
               <div class="metric-reveal" aria-hidden="true">
-                <span class="metric-reveal-value">89% AUC</span>
+                <span class="metric-reveal-value">3 models</span>
               </div>
             </div>
-            <div class="project-footer">
-              <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
-                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                <span class="en">View on GitHub</span>
-                <span class="es">Ver en GitHub</span>
+            <div class="project-footer" style="display:flex;gap:16px;align-items:center;">
+              <a href="https://ninocvl.github.io/Proyecto-Bitcoin-ML" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <svg width="11" height="11" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span class="en">View notebook</span>
+                <span class="es">Ver notebook</span>
               </a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-label="Sales Forecast Pipeline">
-            <h3 class="project-title"><span class="en">Sales Forecast Pipeline</span><span class="es">Pipeline de Pronóstico</span></h3>
-            <p class="project-desc">
-              <span class="en">End-to-end from raw transactions to weekly predictions. dbt handles transforms, Airflow schedules, Prophet predicts.</span>
-              <span class="es">De principio a fin, desde transacciones brutas hasta predicciones semanales. dbt transforma, Airflow programa, Prophet predice.</span>
-            </p>
-            <div class="project-tags">
-              <span class="tag">Prophet</span>
-              <span class="tag">Airflow</span>
-              <span class="tag">dbt</span>
-              <span class="tag">BigQuery</span>
-            </div>
-            <div class="metric-strip" aria-label="Key result: 12% MAPE">
-              <span class="metric-hint">MAPE</span>
-              <div class="metric-reveal" aria-hidden="true">
-                <span class="metric-reveal-value">12% MAPE</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ninocvl/Proyecto-Bitcoin-ML" class="repo-link" target="_blank" rel="noopener noreferrer">
                 <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                <span class="en">View on GitHub</span>
-                <span class="es">Ver en GitHub</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-label="Resume Screening NLP">
-            <h3 class="project-title"><span class="en">Resume Screening NLP</span><span class="es">Filtrado de CVs con NLP</span></h3>
-            <p class="project-desc">
-              <span class="en">Ranks candidates by semantic similarity to job descriptions. Sentence embeddings, no keyword rules, no regex spaghetti.</span>
-              <span class="es">Clasifica candidatos por similitud semántica con la descripción del puesto. Usa embeddings, sin reglas de palabras clave ni regex.</span>
-            </p>
-            <div class="project-tags">
-              <span class="tag">sentence-transformers</span>
-              <span class="tag">FAISS</span>
-              <span class="tag">Streamlit</span>
-            </div>
-            <div class="metric-strip" aria-label="Key result: 60% less screening time">
-              <span class="metric-hint">screen time</span>
-              <div class="metric-reveal" aria-hidden="true">
-                <span class="metric-reveal-value">&#8722;60%</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
-                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                <span class="en">View on GitHub</span>
-                <span class="es">Ver en GitHub</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-label="Fraud Detection API">
-            <h3 class="project-title"><span class="en">Fraud Detection API</span><span class="es">API de Detección de Fraude</span></h3>
-            <p class="project-desc">
-              <span class="en">Real-time transaction scoring under 100ms. LightGBM served via FastAPI, feature store backed by Redis.</span>
-              <span class="es">Clasificación de transacciones en tiempo real en menos de 100ms. LightGBM con FastAPI, feature store con Redis.</span>
-            </p>
-            <div class="project-tags">
-              <span class="tag">LightGBM</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Redis</span>
-              <span class="tag">Kafka</span>
-            </div>
-            <div class="metric-strip" aria-label="Key result: 97.3% precision">
-              <span class="metric-hint">precision</span>
-              <div class="metric-reveal" aria-hidden="true">
-                <span class="metric-reveal-value">97.3%</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/ninocvl" class="repo-link" target="_blank" rel="noopener noreferrer">
-                <svg width="11" height="11" aria-hidden="true"><use href="#icon-github"/></svg>
-                <span class="en">View on GitHub</span>
-                <span class="es">Ver en GitHub</span>
+                GitHub
               </a>
             </div>
           </article>
